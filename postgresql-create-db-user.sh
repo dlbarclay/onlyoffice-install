@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 CMD="CREATE DATABASE onlyoffice;"
+echo "$CMD"
 sudo -i -u postgres psql -c "$CMD"
 CMD="CREATE USER onlyoffice WITH password 'onlyoffice';"
+echo "$CMD"
 sudo -i -u postgres psql -c "$CMD"
 CMD="GRANT ALL privileges ON DATABASE onlyoffice TO onlyoffice;"
+echo "$CMD"
 sudo -i -u postgres psql -c "$CMD"
