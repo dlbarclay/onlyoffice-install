@@ -1,0 +1,8 @@
+When installed with nextcloud on the same server, changing the ports from 80/443 to alternate ports seems to work.
+The server can use the same certificates for both servers, but for some reason the browser doesn't automatically accept them when run on different ports.
+To make nextcloud accept the settings with a self-signed certificate, the following must be added to /var/www/nextcloud/config/config.php
+    'onlyoffice' =>
+    array (
+      'verify_peer_off' => TRUE,
+    )
+This tells nextcloud to allow unverified (self-signed) certificates from the onlyoffice document server.
